@@ -7,18 +7,26 @@
 </head>
 
 <body>
-<svg id="chart" width="600" height="200"></svg>
+    <!--Create svg-->
+<svg id="chart" width="600" height="200"></svg> 
 <script>
+
+    // The following array contains the data that will be used to
+    // create graphics
     const array = [100, 200, 300, 350, 375, 400, 500];
 
-    d3.select("#chart")
-            .selectAll("circle")
-            .data([100])
-            .enter()
-            .append("circle")
-            .attr("r", 10)
-            .attr("cy", 100)
-            .attr("cx", d => d)
+    d3.select("#chart")   // selects svg element by id (like JQuery)           
+            .selectAll("circle") // declares the elements we would like to create
+            .data([100]) // sets data to drive the creation of the elements
+            
+            .enter() // creates a selection to add elements 
+                     // per data items   
+            
+            .append("circle") // appends an element of this type 
+                              // to each data item
+            .attr("r", 10)    // sets the r attribute 
+            .attr("cy", 100)   // sets the cy attribute 
+            .attr("cx", d => d) // sets the cx attribute
 </script>
 
 </body>
