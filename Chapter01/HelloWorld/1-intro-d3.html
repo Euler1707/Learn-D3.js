@@ -17,16 +17,24 @@
 
     d3.select("#chart")   // selects svg element by id (like JQuery)           
             .selectAll("circle") // declares the elements we would like to create
+            
             .data([100]) // sets data to drive the creation of the elements
             
             .enter() // creates a selection to add elements 
-                     // per data items   
+                     // per data items, binds the data to the selection
+                     // of elements, creating a selection of circle 
+                     // place holders the same size as the data array
+                     // in this case it is only one place holder  
             
             .append("circle") // appends an element of this type 
                               // to each data item
+                              // appends circle element, making it
+                              // a child of the svg
+
             .attr("r", 10)    // sets the r attribute 
             .attr("cy", 100)   // sets the cy attribute 
             .attr("cx", d => d) // sets the cx attribute
+                                // notice the d => function
 </script>
 
 </body>
